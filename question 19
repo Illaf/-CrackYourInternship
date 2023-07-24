@@ -1,0 +1,17 @@
+class Solution {
+    public boolean canJump(int[] nums) {
+        int j=0;
+        if(nums.length==1)
+        return true;
+        if(nums.length ==2 && nums[0]==1)
+        return true;
+        while(j<nums.length){
+            if(nums[j]== 0)
+            return false;
+            j=j+nums[j];
+            if(j==nums[nums.length-1])
+            return true;
+        }
+        return false;
+    }
+}
