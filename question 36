@@ -1,0 +1,33 @@
+valid palindrome ii
+class Solution {
+    public boolean validPalindrome(String s) {
+        int i=0;int j=s.length()-1;
+        int count_i=0;int count_j=0;
+        
+        while(i<j){
+            if(s.charAt(i)==s.charAt(j)){
+              i++;
+              j--;
+            }
+           else{
+               i++;
+               count_i++;
+           }
+        }
+         i=0;  j=s.length()-1;
+            while(i<j){
+            if(s.charAt(i)==s.charAt(j)){
+              i++;
+              j--;
+            }
+           else{
+               j--;
+               count_j++;
+           }
+        }
+        if(count_i==1 || count_j==1)  return true;
+        if(count_i==0 || count_j==0) return true;
+
+        return false;
+    }
+}
